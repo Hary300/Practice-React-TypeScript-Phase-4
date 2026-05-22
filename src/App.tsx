@@ -1,23 +1,20 @@
 import { Link, Route, Routes } from 'react-router-dom';
-import Profile from './components/Profile';
-import { RoleProvider } from './context/RoleProvider';
 import Home from './pages/Home';
-import Navbar from './components/Navbar';
+import ThemeProvider from './contexts/theme/ThemeProvider';
+import ThemeButton from './components/ThemeButton';
 
 function App() {
   return (
-    <RoleProvider>
-      <Link to={'/'}>Home</Link>
-      <Link to={'/profile'}>Profile</Link>
-      <Link to={'/navbar'}>Navbar</Link>
+    <ThemeProvider>
+      <div className='dark:text-white dark:bg-black h-screen'>
+        <Link to={'/'}>Home</Link>
+        <ThemeButton />
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/profile' element={<Profile />} />
-
-        <Route path='/navbar' element={<Navbar />} />
-      </Routes>
-    </RoleProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 
