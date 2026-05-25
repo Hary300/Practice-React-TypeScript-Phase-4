@@ -1,10 +1,13 @@
-import Counter from './features/counter/Counter';
+import Counter from './components/Counter';
+import CounterProvider from './contexts/counter/CounterProvider';
 
 function App() {
   return (
-    <div className='flex flex-col gap-4'>
-      <Counter />
-    </div>
+    <CounterProvider>
+      <div className='flex flex-col gap-4'>
+        <Counter />
+      </div>
+    </CounterProvider>
   );
 }
 
