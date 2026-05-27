@@ -1,14 +1,7 @@
-import Counter from './components/Counter';
-import CounterProvider from './contexts/counter/CounterProvider';
+import Parent from './components/Parent';
 
 function App() {
-  return (
-    <CounterProvider>
-      <div className='flex flex-col gap-4'>
-        <Counter />
-      </div>
-    </CounterProvider>
-  );
+  return <Parent />;
 }
 
 export default App;
